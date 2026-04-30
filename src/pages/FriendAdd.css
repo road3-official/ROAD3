@@ -1,0 +1,284 @@
+.friend-add-page {
+  min-height: 100vh;
+  padding: 16px 16px 84px;
+  background: #fdfdfd;
+  box-sizing: border-box;
+}
+
+.friend-add-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 8px 0 14px;
+  margin-bottom: 16px;
+}
+
+.friend-add-back {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 999px;
+  background: #f4f4f4;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.friend-add-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #222222;
+}
+
+.friend-add-section {
+  background: #ffffff;
+  border: 1px solid #ededed;
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.friend-add-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.friend-add-section-head.center {
+  justify-content: center;
+}
+
+.friend-add-section-head h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #222222;
+}
+
+.friend-add-section-head span {
+  font-size: 12px;
+  color: #888888;
+}
+
+.friend-add-search {
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+.friend-add-search:focus {
+  border-color: #ffb575;
+}
+
+.friend-add-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.friend-add-empty {
+  margin: 0;
+  color: #888888;
+  font-size: 14px;
+  text-align: center;
+  padding: 14px 0;
+}
+
+.friend-add-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid #eeeeee;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 12px;
+}
+
+.friend-add-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.friend-add-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: #eef3ff;
+  color: #3554a5;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 800;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.friend-add-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.friend-add-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.friend-add-meta strong {
+  color: #222222;
+  font-size: 15px;
+}
+
+.friend-add-meta span {
+  color: #888888;
+  font-size: 12px;
+}
+
+.friend-add-action {
+  border: none;
+  background: #222222;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.friend-add-action:hover {
+  background: #111111;
+}
+
+.friend-add-method {
+  width: 100%;
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.friend-add-method:last-child {
+  margin-bottom: 0;
+}
+
+.friend-add-method:hover {
+  background: #fff7f0;
+}
+
+.friend-add-file {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.friend-add-preview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.friend-add-preview-image {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid #eeeeee;
+}
+
+.friend-add-manual-button {
+  width: 100%;
+  border: none;
+  background: #ff7a00;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.friend-add-manual-button:hover {
+  background: #eb7000;
+}
+
+@media (max-width: 640px) {
+  .friend-add-page {
+    padding: 12px 12px 80px;
+  }
+
+  .friend-add-section {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .friend-add-item {
+    padding: 10px;
+  }
+}
+
+.friend-add-id-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.friend-add-id-row .friend-add-search {
+  flex: 1;
+}
+
+.friend-add-id-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.friend-add-id-input {
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid #d8dbe2;
+  border-radius: 12px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.friend-add-id-input:focus {
+  outline: none;
+  border-color: #2f80ff;
+}
+
+.friend-add-id-button {
+  flex-shrink: 0;
+  height: 44px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 12px;
+  background: #ff8a00;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.friend-add-id-button:hover {
+  background: #f07f00;
+}

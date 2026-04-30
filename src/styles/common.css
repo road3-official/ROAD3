@@ -1,0 +1,13 @@
+.app-logo {
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px;
+  color: #111 !important;
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+}
+
+body {
+  font-family: serif;
+}

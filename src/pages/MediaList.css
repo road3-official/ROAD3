@@ -1,0 +1,132 @@
+.media-list-page {
+  min-height: 100vh;
+  background: #f7f7f7;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.media-list-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.media-list-back {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 18px;
+  color: #222222;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  flex-shrink: 0;
+}
+
+.media-list-back:hover {
+  background: #f1f1f1;
+}
+
+.media-list-header-text h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #222222;
+}
+
+.media-list-header-text p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #777777;
+}
+
+.media-list-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.media-list-empty {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 18px;
+  padding: 28px 20px;
+  text-align: center;
+  color: #666666;
+}
+
+.media-list-empty p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.media-list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.media-list-date {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #444444;
+}
+
+.media-list-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.media-list-card {
+  aspect-ratio: 1 / 1;
+  border: 1px solid #e3e3e3;
+  border-radius: 16px;
+  background: #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-list-card:hover {
+  background: #f8f8f8;
+}
+
+.media-list-stamp {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.media-list-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-list-placeholder {
+  color: #888888;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .media-list-page {
+    padding: 12px;
+  }
+
+  .media-list-grid {
+    gap: 8px;
+  }
+
+  .media-list-card {
+    border-radius: 14px;
+  }
+}

@@ -1,0 +1,313 @@
+.profileEdit-page {
+  min-height: 100vh;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileEdit-topbar {
+  height: 72px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.profileEdit-back,
+.profileEdit-save {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.profileEdit-back {
+  background: #f5f5f5;
+  color: #222;
+}
+
+.profileEdit-save {
+  background: #ff7a00;
+  color: #fff;
+  border-color: #ff7a00;
+}
+
+.profileEdit-title {
+  margin: 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.profileEdit-content {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 20px 16px 36px;
+}
+
+.profileEdit-card {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 20px;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.profileEdit-headerArea {
+  padding: 16px 16px 0;
+}
+
+.profileEdit-headerPreview {
+  width: 100%;
+  height: 180px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.profileEdit-headerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profileEdit-headerPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #dbeafe, #fce7f3);
+}
+
+.profileEdit-avatarRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px 6px;
+}
+
+.profileEdit-avatarWrap {
+  flex-shrink: 0;
+}
+
+.profileEdit-avatarImage,
+.profileEdit-avatar {
+  width: 104px;
+  height: 104px;
+  border-radius: 999px;
+  border: 4px solid #fff;
+  background: #2f80ed;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 34px;
+  font-weight: 800;
+  object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.profileEdit-uploadBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  color: #333;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.profileEdit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 8px 20px 0;
+}
+
+.profileEdit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profileEdit-label {
+  font-size: 14px;
+  font-weight: 900;
+  color: #333;
+}
+
+.profileEdit-input,
+.profileEdit-textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 15px;
+  outline: none;
+  background: #fff;
+}
+
+.profileEdit-input:focus,
+.profileEdit-textarea:focus {
+  border-color: #ff7a00;
+  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.12);
+}
+
+.profileEdit-textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.profileEdit-count {
+  text-align: right;
+  font-size: 12px;
+  color: #777;
+}
+
+.profileEdit-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.profileEdit-option {
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  border-radius: 999px;
+  padding: 9px 14px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.profileEdit-option.active {
+  border-color: #ff7a00;
+  background: #fff7ef;
+  color: #ff7a00;
+}
+
+.profileEdit-help {
+  color: #777;
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .profileEdit-topbar {
+    height: 68px;
+    padding: 0 12px;
+  }
+
+  .profileEdit-title {
+    font-size: 18px;
+  }
+
+  .profileEdit-content {
+    padding: 16px 12px 28px;
+  }
+
+  .profileEdit-headerPreview {
+    height: 140px;
+  }
+
+  .profileEdit-avatarImage,
+  .profileEdit-avatar {
+    width: 92px;
+    height: 92px;
+    font-size: 28px;
+  }
+
+  .profileEdit-avatarRow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.profile-edit-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.profile-edit-container input,
+.profile-edit-container textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* 全体コンテナ */
+.profile-edit-container {
+  width: 100%;
+  max-width: 480px;   /* ← これ重要（スマホ幅に制限） */
+  margin: 0 auto;     /* ← 中央寄せ */
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* 入力ブロック */
+.profile-edit-field {
+  margin-bottom: 16px;
+}
+
+/* ラベル */
+.profile-edit-label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+/* 入力欄 */
+.profile-edit-input,
+.profile-edit-textarea {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+/* textareaだけ少し高さ */
+.profile-edit-textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+/* 保存ボタン */
+.profile-edit-save {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  background: #ff7a00;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  margin-top: 20px;
+}
+
+.profileEdit-content,
+.profileEdit-card,
+.profileEdit-form,
+.profileEdit-field {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.profileEdit-page {
+  overflow-x: hidden;
+}

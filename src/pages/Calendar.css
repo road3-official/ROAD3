@@ -1,0 +1,346 @@
+.calendar-page {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+/* 上のバー */
+.calendar-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1;
+}
+
+.calendar-header button {
+  background: #f3f3f3;
+  border: 1px solid #e6e6e6;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.calendar-header > div {
+  display: flex;
+  gap: 6px;
+}
+
+/* グリッド本体 */
+.calendar-grid {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 12px 10px 20px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+/* 曜日ヘッダー */
+.calendar-dayHeader {
+  text-align: center;
+  font-weight: 900;
+  font-size: 13px;
+  padding: 4px 0;
+  color: #444;
+}
+
+/* 日付セル */
+.calendar-cell {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  min-height: 82px;
+  padding: 8px 8px 6px;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.calendar-cell:hover {
+  border-color: #ddd;
+}
+
+.calendar-cell.empty {
+  background: transparent;
+  border: none;
+  cursor: default;
+  min-height: 82px;
+}
+
+/* 今日 */
+.calendar-cell.today {
+  border-color: #ff7a00;
+  box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.12);
+}
+
+/* 日付 */
+.calendar-date {
+  font-weight: 900;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 6px;
+  color: #222;
+  line-height: 1.2;
+}
+
+/* 予定（セル内） */
+.calendar-event {
+  background: #ff7a00;
+  color: #fff;
+  border-radius: 8px;
+  padding: 4px 6px;
+  margin-top: 5px;
+  font-weight: 800;
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== 日付ポップアップ ===== */
+.calendar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.calendar-modal {
+  width: min(560px, 100%);
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+.calendar-modalHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.calendar-modalTitle {
+  font-weight: 900;
+  font-size: 16px;
+  color: #222;
+}
+
+.calendar-modalClose {
+  border: none;
+  background: #f3f3f3;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.calendar-modalList {
+  margin-top: 12px;
+  max-height: 46vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+}
+
+.calendar-modalEmpty {
+  color: #777;
+  padding: 12px 0;
+  font-size: 14px;
+}
+
+.calendar-modalItem {
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.calendar-modalText {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.calendar-modalActions {
+  display: flex;
+  gap: 8px;
+}
+
+.calendar-modalBtn {
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.calendar-modalBtn.danger {
+  border-color: #ffd6d6;
+  background: #ffecec;
+  color: #c62828;
+}
+
+.calendar-modalAdd {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.calendar-modalInput {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.calendar-modalInput:focus {
+  border-color: #ff7a00;
+}
+
+.calendar-modalAddBtn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #ff7a00;
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* 画面が狭いとき */
+@media (max-width: 900px) {
+  .calendar-grid {
+    gap: 6px;
+    padding: 10px 8px 18px;
+  }
+
+  .calendar-cell,
+  .calendar-cell.empty {
+    min-height: 72px;
+    padding: 6px 6px 5px;
+  }
+
+  .calendar-date {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .calendar-event {
+    font-size: 10px;
+    padding: 4px 5px;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .calendar-header {
+    height: 56px;
+    padding: 0 10px;
+  }
+
+  .calendar-header h2 {
+    font-size: 16px;
+  }
+
+  .calendar-header button {
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  .calendar-grid {
+    gap: 4px;
+    padding: 8px 6px 14px;
+  }
+
+  .calendar-dayHeader {
+    font-size: 11px;
+    padding: 2px 0;
+  }
+
+  .calendar-cell,
+  .calendar-cell.empty {
+    min-height: 62px;
+    padding: 5px 4px 4px;
+    border-radius: 10px;
+  }
+
+  .calendar-date {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  .calendar-event {
+    font-size: 9px;
+    padding: 3px 4px;
+    margin-top: 3px;
+    border-radius: 6px;
+  }
+
+  .calendar-modal {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .calendar-modalTitle {
+    font-size: 15px;
+  }
+
+  .calendar-modalItem {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .calendar-modalActions {
+    justify-content: flex-end;
+  }
+
+  .calendar-modalAdd {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-modalAddBtn {
+    width: 100%;
+  }
+}
