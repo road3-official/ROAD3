@@ -455,40 +455,50 @@ function AppContent() {
     <>
       {!hideHeader && isLoggedIn && displayAccount && (
         <Header
-          currentAccount={displayAccount}
-          setCurrentAccount={setCurrentOpenGroupAccount}
-          accounts={openGroupAccounts}
-          setAccounts={setOpenGroupAccounts}
-          onCustomizeApps={() => {
-            window.dispatchEvent(new CustomEvent("road3-open-customize"));
-          }}
-          onAddApp={() => {
-            window.dispatchEvent(new CustomEvent("road3-open-add-app"));
-          }}
-          onResetApps={() => {
-            window.dispatchEvent(new CustomEvent("road3-reset-apps"));
-          }}
-          onOpenContact={() => {
-            window.dispatchEvent(new CustomEvent("road3-open-contact"));
-          }}
-          onOpenSettings={() => {
-            window.dispatchEvent(new CustomEvent("road3-open-settings"));
-          }}
-          onLogout={() => {
-            localStorage.removeItem("isLoggedIn");
-            localStorage.removeItem("personalAccount");
-            localStorage.removeItem("closedSharedAccount");
-            localStorage.removeItem("openGroupAccounts");
-            localStorage.removeItem(CURRENT_OPEN_GROUP_ACCOUNT_ID_KEY);
-            localStorage.removeItem(CURRENT_ACCOUNT_ID_KEY);
+  currentAccount={displayAccount}
+  setCurrentAccount={
+    isPersonalLikePage ? setPersonalAccount : setCurrentOpenGroupAccount
+  }
+  accounts={isPersonalLikePage ? [personalAccount] : openGroupAccounts}
+  setAccounts={
+    isPersonalLikePage
+      ? (updatedAccounts) => {
+          const nextPersonal = updatedAccounts?.[0];
+          if (!nextPersonal) return;
+          setPersonalAccount(nextPersonal);
+        }
+      : setOpenGroupAccounts
+  }
+  onCustomizeApps={() => {
+    window.dispatchEvent(new CustomEvent("road3-open-customize"));
+  }}
+  onAddApp={() => {
+    window.dispatchEvent(new CustomEvent("road3-open-add-app"));
+  }}
+  onResetApps={() => {
+    window.dispatchEvent(new CustomEvent("road3-reset-apps"));
+  }}
+  onOpenContact={() => {
+    window.dispatchEvent(new CustomEvent("road3-open-contact"));
+  }}
+  onOpenSettings={() => {
+    window.dispatchEvent(new CustomEvent("road3-open-settings"));
+  }}
+  onLogout={() => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("personalAccount");
+    localStorage.removeItem("closedSharedAccount");
+    localStorage.removeItem("openGroupAccounts");
+    localStorage.removeItem(CURRENT_OPEN_GROUP_ACCOUNT_ID_KEY);
+    localStorage.removeItem(CURRENT_ACCOUNT_ID_KEY);
 
-            localStorage.removeItem("currentOpenGroupAccount");
-            localStorage.removeItem("currentAccount");
-            localStorage.removeItem("accounts");
+    localStorage.removeItem("currentOpenGroupAccount");
+    localStorage.removeItem("currentAccount");
+    localStorage.removeItem("accounts");
 
-            window.location.href = "/ROAD3/#/login";
-          }}
-        />
+    window.location.href = "/ROAD3/#/login";
+  }}
+/>
       )}
 
       <Routes>
