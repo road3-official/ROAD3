@@ -26,26 +26,36 @@ function Header({
   }, [name]);
 
   const saveName = () => {
-    const trimmed = editedName.trim();
-    if (!trimmed || !currentAccount) return;
+  const trimmed = editedName.trim();
+  if (!trimmed || !currentAccount) return;
 
-    const updatedAccounts = accounts.map((acc) =>
-      acc.id === currentAccount.id ? { ...acc, name: trimmed } : acc
-    );
-
-    const nextCurrent =
-      updatedAccounts.find((acc) => acc.id === currentAccount.id) || null;
-
-    setAccounts(updatedAccounts);
-    setCurrentAccount(nextCurrent);
-
-    localStorage.setItem("accounts", JSON.stringify(updatedAccounts));
-
-    // currentAccount を丸ごと保存せず、IDだけ保存する
-    if (nextCurrent?.id != null) {
-      localStorage.setItem("currentAccountId", String(nextCurrent.id));
-    }
+  const updatedCurrent = {
+    ...currentAccount,
+    name: trimmed,
   };
+
+  const updatedAccounts = (accounts || []).map((acc) =>
+    String(acc.id) === String(currentAccount.id)
+      ? { ...acc, name: trimmed }
+      : acc
+  );
+
+  setCurrentAccount(updatedCurrent);
+
+  if (typeof setAccounts === "function") {
+    setAccounts(updatedAccounts);
+  }
+
+  localStorage.setItem("accounts", JSON.stringify(updatedAccounts));
+
+  // パーソナル / クローズ共通アカウントにも反映
+  localStorage.setItem("personalAccount", JSON.stringify(updatedCurrent));
+  localStorage.setItem("closedSharedAccount", JSON.stringify(updatedCurrent));
+
+  if (updatedCurrent?.id != null) {
+    localStorage.setItem("currentAccountId", String(updatedCurrent.id));
+  }
+};
 
   const handleEditToggle = () => {
     if (isEditing) {
