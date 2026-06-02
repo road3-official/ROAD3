@@ -230,23 +230,25 @@ function AppContent() {
   const isLayersPage = pathname.startsWith("/layers");
   const isSignalThreadPage = pathname.startsWith("/signal/");
   const isOpenDMPage = pathname.startsWith("/dm");
+  const isSearchPage = pathname.startsWith("/search");
 
   /* ---------- Header / BottomNav visibility ---------- */
   const hideHeader =
-    isAuthPage ||
-    isActivity ||
-    isProfile ||
-    isPostsPage ||
-    isPostDetail ||
-    isOpen ||
-    isGroup ||
-    isClosed ||
-    isChat ||
-    isFriendAddPage ||
-    isNotificationsPage ||
-    isLayersPage ||
-    isSignalThreadPage ||
-    isOpenDMPage;
+  isAuthPage ||
+  isActivity ||
+  isProfile ||
+  isPostsPage ||
+  isPostDetail ||
+  isOpen ||
+  isGroup ||
+  isClosed ||
+  isChat ||
+  isFriendAddPage ||
+  isNotificationsPage ||
+  isLayersPage ||
+  isSignalThreadPage ||
+  isOpenDMPage ||
+  isSearchPage;
 
   const shouldHideBottomNav =
     isAuthPage ||
