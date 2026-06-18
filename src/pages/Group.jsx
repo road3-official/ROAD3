@@ -346,7 +346,10 @@ function Group({
           )}
         </div>
 
-        <h1 className="app-logo">ROAD3</h1>
+        <div className="app-logoBlock">
+  <h1 className="app-logo">ROAD3</h1>
+  <span className="app-spaceName">Group Space</span>
+</div>
 
         <div className="group-menu-wrapper">
           <button
