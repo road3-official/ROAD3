@@ -456,7 +456,8 @@ function AppContent() {
   return (
     <>
       {!hideHeader && isLoggedIn && displayAccount && (
-        <Header
+       <Header
+        spaceName={isPersonalLikePage ? "Personal Space" : "Open Space"}
   currentAccount={displayAccount}
   setCurrentAccount={
     isPersonalLikePage ? setPersonalAccount : setCurrentOpenGroupAccount
