@@ -1137,7 +1137,10 @@ const [currentAccount, setCurrentAccount] = useState(() =>
           )}
         </button>
 
-        <h2 className="open-logo">ROAD3 for R18</h2>
+        <div className="app-logoBlock">
+  <h2 className="open-logo">ROAD3 for R18</h2>
+  <span className="app-spaceName">Open R18 Space</span>
+</div>
 
         <div className="open-headerRight">
           <button
