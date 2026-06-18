@@ -6,6 +6,7 @@ function Header({
   setCurrentAccount,
   accounts,
   setAccounts,
+  spaceName,
   onCustomizeApps,
   onAddApp,
   onResetApps,
@@ -99,7 +100,10 @@ function Header({
       <div className="app-header-top">
         <div className="app-header-spacer" />
 
-        <h1 className="app-logo">ROAD3</h1>
+        <div className="app-logoBlock">
+  <h1 className="app-logo">ROAD3</h1>
+  {spaceName && <span className="app-spaceName">{spaceName}</span>}
+</div>
 
         <div className="header-menuWrap" ref={menuRef}>
           <button
