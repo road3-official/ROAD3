@@ -337,7 +337,10 @@ function Closed({
   return (
     <div className="closed-page">
       <header className="closed-header">
-        <h1 className="app-logo">ROAD3</h1>
+        <div className="app-logoBlock">
+  <h1 className="app-logo">ROAD3</h1>
+  <span className="app-spaceName">Close Space</span>
+</div>
 
         <div className="closed-header-actions">
           <button
