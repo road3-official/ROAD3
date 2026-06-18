@@ -1255,7 +1255,10 @@ export default function Open({ currentAccount, setNotifications }) {
           )}
         </button>
 
-        <h1 className="app-logo">ROAD3</h1>
+        <div className="app-logoBlock">
+  <h1 className="app-logo">ROAD3</h1>
+  <span className="app-spaceName">Open Space</span>
+</div>
 
         <div className="open-headerRight">
           <button
