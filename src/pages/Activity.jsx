@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Activity.css";
+import PersonalFooterNav from "../components/PersonalFooterNav";
 
 function getTabFromPath(pathname) {
   if (pathname.startsWith("/activity/signals")) return "signals";
@@ -543,6 +544,11 @@ export default function Activity({
           </>
         )}
       </div>
+            <PersonalFooterNav
+        onOpenLayer={() => navigate("/personal")}
+        onOpenAccount={() => navigate("/personal")}
+        notifications={notifications}
+      />
     </div>
   );
 }
