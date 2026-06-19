@@ -544,11 +544,7 @@ export default function Activity({
           </>
         )}
       </div>
-            <PersonalFooterNav
-        onOpenLayer={() => navigate("/personal")}
-        onOpenAccount={() => navigate("/personal")}
-        notifications={notifications}
-      />
+          <PersonalFooterNav notifications={[]} />
     </div>
   );
 }
