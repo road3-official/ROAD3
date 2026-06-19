@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Calendar.css";
+import PersonalFooterNav from "../components/PersonalFooterNav";
 
 const STORAGE_KEY = "road3_calendar_v1";
 
@@ -262,6 +263,11 @@ export default function Calendar() {
           </div>
         </div>
       )}
+            <PersonalFooterNav
+        onOpenLayer={() => navigate("/personal")}
+        onOpenAccount={() => navigate("/personal")}
+        notifications={[]}
+      />
     </div>
   );
 }
