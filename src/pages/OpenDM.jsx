@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import "./OpenDM.css";
+import BottomNav from "../components/BottomNav";
 
 function OpenDM() {
   const navigate = useNavigate();
@@ -202,6 +203,8 @@ function OpenDM() {
           </div>
         </>
       )}
+
+        <BottomNav />
     </div>
   );
 }
