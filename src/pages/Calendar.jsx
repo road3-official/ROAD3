@@ -263,11 +263,7 @@ export default function Calendar() {
           </div>
         </div>
       )}
-            <PersonalFooterNav
-        onOpenLayer={() => navigate("/personal")}
-        onOpenAccount={() => navigate("/personal")}
-        notifications={[]}
-      />
+         <PersonalFooterNav notifications={[]} />
     </div>
   );
 }
