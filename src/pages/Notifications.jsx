@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Notifications.css";
+import BottomNav from "../components/BottomNav";
 
 const OPEN_POSTS_KEY = "openPosts";
 const OPEN_R18_POSTS_KEY = "openR18Posts";
@@ -528,7 +529,9 @@ function Notifications({ notifications, setNotifications, currentAccount }) {
             );
           })
         )}
-      </div>
+        </div>
+
+      <BottomNav />
     </div>
   );
 }
