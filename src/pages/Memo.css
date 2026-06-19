@@ -456,3 +456,7 @@
     z-index: auto !important;
   }
 }
+
+.memo-page {
+  padding-bottom: 72px;
+}
