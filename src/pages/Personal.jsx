@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Personal.css";
 import PersonalFooterNav from "../components/PersonalFooterNav";
 
@@ -22,6 +22,27 @@ function Personal({
   notifications,
 }) {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+  if (location.state?.openAccount) {
+    setIsAccountOpen(true);
+
+    navigate("/personal", {
+      replace: true,
+      state: null,
+    });
+  }
+
+  if (location.state?.openLayer) {
+    setIsLayerOpen(true);
+
+    navigate("/personal", {
+      replace: true,
+      state: null,
+    });
+  }
+}, [location.state, navigate]);
 
   const [isAccountOpen, setIsAccountOpen] = useState(false);
   const [isLayerOpen, setIsLayerOpen] = useState(false);
