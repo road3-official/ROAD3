@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Memo.css";
+import PersonalFooterNav from "../components/PersonalFooterNav";
 
 function now() {
   return Date.now();
@@ -451,6 +452,11 @@ export default function Memo({ currentAccount }) {
           )}
         </section>
       </div>
+          <PersonalFooterNav
+        onOpenLayer={() => navigate("/personal")}
+        onOpenAccount={() => navigate("/personal")}
+        notifications={[]}
+      />
     </div>
   );
 }
