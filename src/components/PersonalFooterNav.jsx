@@ -24,6 +24,24 @@ export default function PersonalFooterNav({
     return "";
   }, [pathname]);
 
+  const handleOpenAccount = () => {
+    if (onOpenAccount) {
+      onOpenAccount();
+      return;
+    }
+
+    navigate("/personal", { state: { openAccount: true } });
+  };
+
+  const handleOpenLayer = () => {
+    if (onOpenLayer) {
+      onOpenLayer();
+      return;
+    }
+
+    navigate("/personal", { state: { openLayer: true } });
+  };
+
   return (
     <nav className="footer-nav" role="navigation" aria-label="Personal footer">
       <button
@@ -33,9 +51,7 @@ export default function PersonalFooterNav({
           navigate("/activity/signals", { state: { from: "/personal" } })
         }
       >
-        <span className="nav-icon" aria-hidden="true">
-          📡
-        </span>
+        <span className="nav-icon" aria-hidden="true">📡</span>
         <span className="nav-label">シグナル</span>
       </button>
 
@@ -46,20 +62,12 @@ export default function PersonalFooterNav({
           navigate("/activity/saved", { state: { from: "/personal" } })
         }
       >
-        <span className="nav-icon" aria-hidden="true">
-          ❤️
-        </span>
+        <span className="nav-icon" aria-hidden="true">❤️</span>
         <span className="nav-label">保存</span>
       </button>
 
-      <button
-        type="button"
-        className="footer-nav-item"
-        onClick={() => onOpenAccount?.()}
-      >
-        <span className="nav-icon" aria-hidden="true">
-          👤
-        </span>
+      <button type="button" className="footer-nav-item" onClick={handleOpenAccount}>
+        <span className="nav-icon" aria-hidden="true">👤</span>
         <span className="nav-label">アカウント</span>
       </button>
 
@@ -72,23 +80,13 @@ export default function PersonalFooterNav({
           navigate("/activity/notifications", { state: { from: "/personal" } })
         }
       >
-        <span className="nav-icon" aria-hidden="true">
-          🔔
-        </span>
+        <span className="nav-icon" aria-hidden="true">🔔</span>
         <span className="nav-label">通知</span>
-        {unreadCount > 0 && (
-          <span className="footer-nav-badge">{unreadCount}</span>
-        )}
+        {unreadCount > 0 && <span className="footer-nav-badge">{unreadCount}</span>}
       </button>
 
-      <button
-        type="button"
-        className="footer-nav-item"
-        onClick={() => onOpenLayer?.()}
-      >
-        <span className="nav-icon" aria-hidden="true">
-          🪜
-        </span>
+      <button type="button" className="footer-nav-item" onClick={handleOpenLayer}>
+        <span className="nav-icon" aria-hidden="true">🪜</span>
         <span className="nav-label">階層</span>
       </button>
     </nav>
