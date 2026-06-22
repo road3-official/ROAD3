@@ -456,8 +456,8 @@ function AppContent() {
   return (
     <>
       {!hideHeader && isLoggedIn && displayAccount && (
-       <Header
-        spaceName={isPersonalLikePage ? "Personal Space" : "Open Space"}
+        <Header
+  spaceName={isPersonalLikePage ? "Personal Space" : "Open Space"}
   currentAccount={displayAccount}
   setCurrentAccount={
     isPersonalLikePage ? setPersonalAccount : setCurrentOpenGroupAccount
@@ -484,6 +484,11 @@ function AppContent() {
   onOpenContact={() => {
     window.dispatchEvent(new CustomEvent("road3-open-contact"));
   }}
+
+  onOpenTerms={() => {
+    window.dispatchEvent(new CustomEvent("road3-open-terms"));
+  }}
+
   onOpenSettings={() => {
     window.dispatchEvent(new CustomEvent("road3-open-settings"));
   }}
