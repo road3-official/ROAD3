@@ -52,6 +52,7 @@ function Personal({
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isFollowOpen, setIsFollowOpen] = useState(false);
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
 
   const [isEditingPersonalOpen, setIsEditingPersonalOpen] = useState(false);
   const [editingPersonalName, setEditingPersonalName] = useState("");
@@ -125,6 +126,8 @@ function Personal({
     };
     const openSettings = () => setIsSettingsOpen(true);
 
+    const openTerms = () => setIsTermsOpen(true);
+
     const resetAppsFromHeader = () => {
       const ok = window.confirm("アプリ配置を初期化する？");
       if (!ok) return;
@@ -137,6 +140,7 @@ function Personal({
     window.addEventListener("road3-open-customize", openCustomize);
     window.addEventListener("road3-open-add-app", openAddApp);
     window.addEventListener("road3-open-contact", openContact);
+    window.addEventListener("road3-open-terms", openTerms);
     window.addEventListener("road3-open-settings", openSettings);
     window.addEventListener("road3-reset-apps", resetAppsFromHeader);
 
@@ -144,6 +148,7 @@ function Personal({
       window.removeEventListener("road3-open-customize", openCustomize);
       window.removeEventListener("road3-open-add-app", openAddApp);
       window.removeEventListener("road3-open-contact", openContact);
+      window.removeEventListener("road3-open-terms", openTerms);
       window.removeEventListener("road3-open-settings", openSettings);
       window.removeEventListener("road3-reset-apps", resetAppsFromHeader);
     };
@@ -1038,6 +1043,59 @@ function Personal({
           </div>
         </div>
       )}
+
+      {isTermsOpen && (
+  <div className="layer-overlay" onClick={() => setIsTermsOpen(false)}>
+    <div className="layer-modal" onClick={(e) => e.stopPropagation()}>
+      <h3>利用規約・プライバシーポリシー</h3>
+
+      <h4>利用規約</h4>
+
+      <p className="personal-muted">
+        ROAD3はユーザー同士が交流し、情報発信やコミュニケーションを行うためのSNSサービスです。
+      </p>
+
+      <p className="personal-muted">
+        他者への誹謗中傷、嫌がらせ、なりすまし、スパム行為は禁止します。
+      </p>
+
+      <p className="personal-muted">
+        投稿内容の責任は投稿者本人にあります。
+      </p>
+
+      <p className="personal-muted">
+        ROAD3 for R18については18歳未満の方の利用を固く禁止します。
+      </p>
+
+      <p className="personal-muted">
+        運営は必要に応じてサービス内容および規約を変更することがあります。
+      </p>
+
+      <h4>プライバシーポリシー</h4>
+
+      <p className="personal-muted">
+        ROAD3はサービス提供に必要な範囲で利用者情報を取得します。
+      </p>
+
+      <p className="personal-muted">
+        取得した情報はアカウント管理、サービス提供、
+        不正利用対策、お問い合わせ対応のために利用します。
+      </p>
+
+      <p className="personal-muted">
+        法令に基づく場合を除き、
+        第三者へ販売・提供することはありません。
+      </p>
+
+      <button
+        className="modal-secondary"
+        onClick={() => setIsTermsOpen(false)}
+      >
+        閉じる
+      </button>
+    </div>
+  </div>
+)}
 
       {isSettingsOpen && (
         <div className="layer-overlay" onClick={() => setIsSettingsOpen(false)}>
