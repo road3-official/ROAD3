@@ -11,6 +11,7 @@ function Header({
   onAddApp,
   onResetApps,
   onOpenContact,
+  onOpenTerms,
   onOpenSettings,
   onLogout,
 }) {
@@ -163,6 +164,17 @@ function Header({
               >
                 お問い合わせ
               </button>
+
+              <button
+  type="button"
+  className="menu-item"
+  onClick={() => {
+    closeMenu();
+    onOpenTerms?.();
+  }}
+>
+  利用規約・プライバシーポリシー
+</button>
 
               <button
                 type="button"
