@@ -1046,7 +1046,10 @@ function Personal({
 
       {isTermsOpen && (
   <div className="layer-overlay" onClick={() => setIsTermsOpen(false)}>
-    <div className="layer-modal" onClick={(e) => e.stopPropagation()}>
+    <div
+      className="layer-modal terms-modal"
+      onClick={(e) => e.stopPropagation()}
+    >
       <h3>利用規約・プライバシーポリシー</h3>
 
       <h4>利用規約</h4>
