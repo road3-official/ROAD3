@@ -832,3 +832,16 @@
   border-bottom: 2px solid #f5b97a;
 }
 
+.terms-modal {
+  text-align: left;
+}
+
+.terms-modal h3,
+.terms-modal h4 {
+  text-align: center;
+}
+
+.terms-modal p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
