@@ -215,6 +215,8 @@ function AppContent() {
   const isAuthPage = isWelcomePage || isLoginPage || isSignupPage;
 
   const isPersonal = pathname.startsWith("/personal");
+  const isMemoPage = pathname.startsWith("/personal/memo");
+  const isCalendarPage = pathname.startsWith("/personal/calendar");
   const isActivity = pathname.startsWith("/activity");
   const isProfile = pathname.startsWith("/profile");
 
@@ -239,6 +241,8 @@ function AppContent() {
   isProfile ||
   isPostsPage ||
   isPostDetail ||
+  isMemoPage ||
+  isCalendarPage ||
   isOpen ||
   isGroup ||
   isClosed ||
