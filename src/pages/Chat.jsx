@@ -539,12 +539,6 @@ function Chat({ currentAccount, setClosedNotifications }){
                 <button onClick={() => alert("アナウンスはこれから実装")}>
                   アナウンス
                 </button>
-                <button onClick={() => navigate(`/chat/${friendId}/links`)}>
-                  リンク
-                </button>
-                <button onClick={() => navigate(`/chat/${friendId}/files`)}>
-                  ファイル
-                </button>
                 <button
                   onClick={() => {
                     setAssistOpen(false);
