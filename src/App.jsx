@@ -498,9 +498,6 @@ function AppContent() {
   }}
   onLogout={() => {
     localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("personalAccount");
-    localStorage.removeItem("closedSharedAccount");
-    localStorage.removeItem("openGroupAccounts");
     localStorage.removeItem(CURRENT_OPEN_GROUP_ACCOUNT_ID_KEY);
     localStorage.removeItem(CURRENT_ACCOUNT_ID_KEY);
 
