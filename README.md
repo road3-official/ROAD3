@@ -22,3 +22,8 @@ ROAD3は、自由と安心を両立することを目指したSNSです。
 - サーバー対応
 - リアルタイム同期
 - Android / iOS ストア版公開
+
+
+## 公開ページ
+
+https://road3-official.github.io/ROAD3/
